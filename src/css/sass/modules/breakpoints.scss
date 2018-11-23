@@ -1,0 +1,93 @@
+//----------
+// Ul + Nico scss for the breakpoints
+//----------
+
+@mixin phone {
+	@media screen and (max-width:480px){
+		@content;
+	}
+}
+
+@mixin min-phone {
+	@media screen and (min-width:481px){
+		@content;
+	}
+}
+
+@mixin big-phone {
+	@media screen and (max-width:600px){
+		@content;
+	}
+}
+
+@mixin min-big-phone {
+	@media screen and (max-width:601px){
+		@content;
+	}
+}
+
+@mixin ipad {
+	@media screen and (max-width:767px){
+		@content;
+	}
+}
+
+@mixin min-ipad {
+	@media screen and (min-width:768px){
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (max-width:800px){
+		@content;
+	}
+}
+
+@mixin min-tablet {
+	@media screen and (min-width:801px){
+		@content;
+	}
+}
+
+@mixin divi {
+	@media screen and (max-width:980px){
+		@content;
+	}
+}
+
+@mixin min-divi {
+	@media screen and (min-width:981px){
+		@content;
+	}
+}
+
+@mixin min-macbook {
+	@media screen and (min-width:1280px){
+		@content;
+	}
+}
+
+@mixin stan {
+	@media screen and (max-width:1339px){
+		@content;
+	}
+}
+
+@mixin min-stan {
+	@media screen and (min-width:1440px){
+		@content;
+	}
+}
+
+@mixin macbook {
+	@media screen and (max-width:1279px){
+		@content;
+	}
+}
+
+@mixin min-large{
+	@media screen and (min-width:1350px){
+		@content;
+	}
+}

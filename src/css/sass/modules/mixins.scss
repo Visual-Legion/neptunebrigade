@@ -1,0 +1,207 @@
+/**
+ * modules/mixins
+ * ---
+ */
+
+
+/* Button */
+@mixin button($border-color:$white, $text-color:$black, $text-color-hover:$white, $background-image:$white, $background-image-hover:$black, $hover-effect:'load'){
+// background-color:transparent;$background-image
+background-image:$background-image;
+background-size: 200%;
+background-position: 200%;
+border-radius: 100px;
+padding: 10px 35px;
+color: $text-color;
+text-align: center;
+font-size: 18px;
+font-weight: bold;
+display: inline-block;
+
+@if $border-color == 'none'{
+    border:none;
+} @else {
+    border: 2px solid $border-color;
+}
+
+
+
+@if $hover-effect == 'load' {
+  
+  transition: background-position 0.6s;
+  transition-timing-function: cubic-bezier(.19,1.72,.71,.47);
+
+  &:hover,
+  &:active {
+    color: $text-color-hover;
+    background-position: 100%;
+  }
+// } @else if $other == double {
+
+} @else {
+  transition: all 0.4s ease-in-out;
+  &:hover,
+  &:active {
+    color: $text-color-hover;
+    background-image:$background-image-hover;
+  }
+}
+
+}
+
+ /* Bottom arrow clip path */
+
+@mixin bottom-arrow-clip-semi-divi(){
+    clip-path: polygon(0 260px, 48% 260px, 50% 100%, 52% 260px, 100% 260px, 100% 0, 0 0);
+    -webkit-clip-path: polygon(0 260px, 48% 260px, 50% 100%, 52% 260px, 100% 260px, 100% 0, 0 0);
+    @media only screen and (max-width: 980px){
+        clip-path: polygon(0 220px, 47% 220px, 50% 100%, 53% 220px, 100% 220px, 100% 0, 0 0);
+        -webkit-clip-path: polygon(0 220px, 47% 220px, 50% 100%, 53% 220px, 100% 220px, 100% 0, 0 0);
+    }
+    @media only screen and (max-width: 540px){
+        clip-path: polygon(0 160px, 46% 160px, 50% 100%, 54% 160px, 100% 160px, 100% 0, 0 0);
+        -webkit-clip-path: polygon(0 160px, 46% 160px, 50% 100%, 54% 160px, 100% 160px, 100% 0, 0 0);
+    }
+}
+
+@mixin bottom-arrow-clip-divi(){
+    clip-path: polygon(0 540px, 48% 540px, 50% 100%, 52% 540px, 100% 540px, 100% 0, 0 0);
+    -webkit-clip-path: polygon(0 540px, 48% 540px, 50% 100%, 52% 540px, 100% 540px, 100% 0, 0 0);
+    @media only screen and (max-width: 980px){
+        clip-path: polygon(0 460px, 47% 460px, 50% 100%, 53% 460px, 100% 460px, 100% 0, 0 0);
+        -webkit-clip-path: polygon(0 460px, 47% 460px, 50% 100%, 53% 460px, 100% 460px, 100% 0, 0 0);
+    }
+    @media only screen and (max-width: 540px){
+        clip-path: polygon(0 360px, 46% 360px, 50% 100%, 54% 360px, 100% 360px, 100% 0, 0 0);
+        -webkit-clip-path: polygon(0 360px, 46% 360px, 50% 100%, 54% 360px, 100% 360px, 100% 0, 0 0);
+    }
+}
+
+@mixin inline-top{
+    display: inline-block;
+    vertical-align: top;
+}
+@mixin inline-middle{
+    display: inline-block;
+    vertical-align: middle;
+}
+@mixin inline-bottom{
+    display: inline-block;
+    vertical-align: bottom;
+}
+@mixin fixed-fill{
+    position:fixed;top:0px;left:0px;bottom:0px;right:0px;width:100%;height:100%;
+}
+@mixin absolute-fill{
+    position:absolute;left:0px;right:0px;top:0px;bottom:0px;
+    width:100%;height:100%;
+    /* edit: added z-index */
+    z-index: 1;
+}
+
+
+/*
+Responsive font size
+*/
+@mixin font-size($size,$rapp:1){
+    font-size:$size;
+    @include tablet {
+        font-size:($size - (2 * $rapp));
+    }
+    @include phone{
+        font-size:($size - (4 * $rapp));
+    }
+    
+}
+
+/*
+Arrow mixin
+*/
+@mixin arrow($direction, $color, $size){
+    display: block;
+    height: 0;
+    width: 0;
+    
+    @if $direction == 'top' {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+    } @else if $direction == 'right' {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+    } @else if $direction == 'bottom' {
+        border-top: $size solid $color;
+        border-right: $size solid transparent;
+        border-left: $size solid transparent;
+    } @else if $direction == 'left' {
+        border-top: $size solid transparent;
+        border-right: $size solid $color;
+        border-bottom: $size solid transparent;
+    } @else if $direction == 'top-left' {
+        border-top: $size solid $color; 
+        border-right: $size solid transparent;  
+    } @else if $direction == 'top-right' {
+        border-top: $size solid $color; 
+        border-left: $size solid transparent;
+    } @else if $direction == 'bottom-left' {
+        border-bottom: $size solid $color; 
+        border-right: $size solid transparent;  
+    } @else if $direction == 'bottom-right' {
+        border-bottom: $size solid $color; 
+        border-left: $size solid transparent;
+    }
+}
+
+/*
+Color placeholder mixin
+*/
+@mixin color-placeholder($color:#000){
+    input,textarea {
+        &::-webkit-input-placeholder{color:$color;}
+        &:-moz-placeholder{color:$color;}
+        &::-moz-placeholder{color:$color;}
+        &:-ms-input-placeholder{color:$color;}
+    }
+}
+
+
+/* absolute center vertically */
+
+@mixin absolute_center_vertically{
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+/* absolute center horrziontally */
+
+@mixin absolute_center_horrizontaly{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* absolute center both */
+
+@mixin absolute_center_both{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+@mixin reset-box {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin transition {
+    transition: all 0.4s ease-in-out;
+}
+
+@mixin middle{
+        display: inline-block;
+    vertical-align: middle;
+}

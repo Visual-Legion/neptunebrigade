@@ -1,0 +1,44 @@
+.photo_gallery{
+	padding-top:130px;
+	h1,h2{
+		margin-left: 10px;
+		text-align: center;
+	}
+	.album{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		margin:auto;
+		text-align: center;
+		margin-top: 20px;
+		.photo{
+			margin:10px;
+			// width: 280px;
+			// height: 280px;
+			text-align: center;
+			img{
+				height: 250px;
+				width: 250px;
+				// object-fit: contain;
+				object-fit: cover;
+			}
+			a{
+				transition: all 0.4s ease-in-out;
+				&:before{
+					transition: all 0.4s ease-in-out;
+					opacity: 0;
+					font-size: 32px;
+					@include absolute_center_both();
+				}
+				&:hover{
+					background: rgba(255,255,255,0.7);
+					&:before{
+						opacity: 1;
+						font-size: 32px;
+					}
+				}
+			}
+		}
+	}
+}

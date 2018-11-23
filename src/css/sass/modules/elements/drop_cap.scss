@@ -1,0 +1,47 @@
+.drop_cap{
+	position: relative;
+   z-index: 1;
+   padding-top: 140px;
+	&:before{
+		content: ' ';
+    background-image: url(https://neptunebrigade.com/wp-content/uploads/2018/11/cool-t.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 107px;
+    height: 140px;
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+	}
+}
+
+.t_drop_cap{
+	text-indent:54px;
+	&:before{
+		background-image: url("https://neptunebrigade.com/wp-content/uploads/2018/11/cool-t.svg");
+		width: 107px;
+    height: 140px;
+    transform: translate(-97px,-77px);
+	}
+}
+
+.w_drop_cap{
+	text-indent:124px;
+	&:before{
+		background-image: url("https://neptunebrigade.com/wp-content/uploads/2018/11/cool-w.svg");
+		width: 247px;
+    height: 110px;
+    transform: translate(-126px, -48px);
+	}
+}
+
+.d_drop_cap{
+   text-indent: 78px;
+	&:before{
+		background-image: url("https://neptunebrigade.com/wp-content/uploads/2018/11/cool-d.svg");
+		width: 154px;
+    height: 115px;
+    transform: translate(-100px, -38px);
+	}
+}
+

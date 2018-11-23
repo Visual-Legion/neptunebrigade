@@ -1,0 +1,62 @@
+.woocommerce{ //.woocommerce-page
+	.wcv-header-container{
+		#banner-wrap{
+			height: 360px; 
+			.store-banner{
+				width:100%;
+				height: 360px;
+				object-fit: cover;
+			}
+		}
+	}
+	.star-rating span::before{
+		font-size:12px;
+	}
+
+	/* Vendor */
+	#inner-element{
+		position: relative;
+		top: 0;
+		left: 0px;
+		right: 0;
+		background: rgba(255,255,255,.9);
+		max-width: 100%;
+		height: 100%;
+		padding: 15px 10%;
+
+		display: flex;
+    justify-content: flex-end;
+    .store-brand{
+			display: flex;
+	    position: absolute;
+	    left: 0;
+	    margin-left: 10%;
+	    margin-top: -110px;
+	    justify-content: flex-start;
+	    align-items: flex-end;
+    }
+    img{
+    	z-index:1;
+    }
+    .store-card{
+    	background-color: #F9F9F9;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	    padding-left: 100px;
+	    padding-right: 20px;
+	    text-align: left;
+	    margin-left: -90px;
+	    a,h3,p,ul{
+	    	margin: 5px 0;
+	    }
+    }
+    ul{
+    	padding: 0;
+    }
+    .store-info{
+    	// min-height: 50px;
+    	padding: 10px;
+
+    }
+	}
+}

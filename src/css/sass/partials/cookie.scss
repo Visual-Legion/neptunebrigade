@@ -1,0 +1,40 @@
+.cookie_wrapper{
+
+	background:rgba(0,0,0,0.8);
+	position:fixed;
+	bottom:0;
+	width: 100%;
+	padding:20px;
+	z-index: 1;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	@include transition;
+	opacity:1;
+
+	&.hidden{
+		bottom:-100px;
+		opacity: 0;
+	}
+
+	.cookie_description, a{
+		@include middle;
+	}
+
+	.cookie_description{
+		font-size: 12px;
+		color: #ffffff;
+	}
+	a{
+		font-size: 12px;
+		padding: 5px 10px;
+		color: #ffffff;
+		border: 1px solid #ffffff;
+		text-transform: uppercase;
+		background-color:transparent;
+		@include transition;
+		&:hover{
+			background:rgba(255,255,255,0.2);
+		}
+	}
+}

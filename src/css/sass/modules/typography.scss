@@ -1,0 +1,115 @@
+html,body {
+  font-size: $font-size-base;
+  line-height:$line-height-base;
+
+  @include big-phone{
+    font-size:$font-size-base-mobile;
+    line-height:$line-height-base-mobile;
+  }
+
+}
+
+body{
+  margin: auto;
+
+  section{
+    transition: all 0.4s ease-in-out; 
+  }
+
+  .break-word{
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  h1,h2,h3,h4,h5,h6,p,span,a{
+        // overflow-wrap: break-word;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+    // padding: 0 20px;
+    @include divi{
+      text-align:center !important;
+    }
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-family: $heading_font;
+    font-weight: $heading_weight;
+    // margin: $heading_margin;
+    margin-bottom: $def_spacing;
+    color: $accent_color;
+  }
+  h1, h1 span{
+    // font-size: $h1;
+    font-size: $h2;
+    line-height: 1.2em;
+    // line-height: 84px;
+    // margin-top: 21px;
+    // margin-bottom: 42px;
+    // @include phone{
+    //   font-size: $h2;
+    //   line-height: 1.2em;
+    //   // line-height: 42px;
+    // }
+    @include big-phone{
+      font-size: $h3;
+    }
+  }
+  h2, h2 span{
+    font-size: $h2;
+    line-height: 1.2em;
+    // line-height: 42px;
+    // margin-top: 21px;
+    // margin-bottom: 21px;
+    @include big-phone{
+      font-size: $h3;
+    }
+  }
+  h3, h3 span{
+    font-size: $h3;
+    line-height: 1.5em;
+    // line-height: 42px;
+    // margin-top: 21px;
+    // margin-bottom: 0px;
+    @include big-phone{
+      font-size: $h4;
+    }
+  }
+  h4, h4 span, blockquote{
+    font-size: $h4;
+    line-height: 1.5em;
+    // line-height: 21px;
+    // margin-top: 21px;
+    // margin-bottom: 0px;
+    
+  }
+  h5, h5 span{
+    font-size: $h5;
+    line-height: 1.5em;
+    // line-height: 21px;
+    // margin-top: 21px;
+    // margin-bottom: 0px;
+  }
+  h6, h6 span{
+    font-size: $h5;
+    line-height: 1.5em;
+    // line-height: 21px;
+    // margin-top: 21px;
+    // margin-bottom: 0px;
+  }
+  p,span{
+    font-weight: $body_weight;
+    font-size: $font-size-base;
+    line-height:$line-height-base;
+
+    @include big-phone{
+      font-size:$font-size-base-mobile;
+      line-height:$line-height-base-mobile;
+    }
+  }
+  p{
+    // margin:$paragraph_margin;
+    margin-bottom: $def_spacing;
+  }
+  
+}

@@ -1,0 +1,363 @@
+<html>
+  <head>
+    <title>Tredny coming soon!</title>
+<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  </head>
+  <body bgcolor=white>
+    <div class="loader parent">
+      <!-- <div class="content_wrapper child"> -->
+        <!-- <img src="<?php //echo get_template_directory_uri(), '/img/logo.svg'; ?>"> -->
+        <!-- <div class="loader-05"></div> -->
+      <!-- </div> -->
+      <div class="utopia_wrapper">
+        <div class="glitch_wrapper">
+          <h1 class="glitch" data-text="Loading... your brand is being created">Loading... your brand is being created</h1> 
+        </div>
+        <!-- <h2 class="glitch" data-text="Loading">Coming soon, fodes!</h2> --> 
+        <div class="vl_overlay">
+          <h1>Tredny</h1>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+<style type="text/css">
+  body,h1,h2{
+    font-family: 'Muli', sans-serif;
+  }
+  h1,h2{
+    text-align: center;
+  }
+  .vl_overlay{
+    mix-blend-mode: overlay;
+    opacity: 0;
+    -webkit-animation: opacity-roll 10s linear infinite 0s;
+    -moz-animation: opacity-roll 10s linear infinite 0s;
+    animation: opacity-roll 10s linear infinite 0s;
+  }
+  h1.vl_overlay{
+    font-size: 4em;
+  }
+  .glitch_wrapper{
+    -webkit-animation: opacity-roll 10s linear infinite -5s;
+    -moz-animation: opacity-roll 10s linear infinite -5s;
+    animation: opacity-roll 10s linear infinite -5s;
+  }
+  .glitch_wrapper, .vl_overlay{
+    position: absolute;
+  }
+
+  @keyframes opacity-roll {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } 
+  }
+  @-webkit-keyframes opacity-roll {
+    0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } 
+  }
+  @-moz-keyframes opacity-roll {
+    0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } 
+  }
+  /*.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }*/
+  /* Loader */
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: white;
+  background-size: 100px; }
+  .loader .content_wrapper {
+    text-align: center;
+    color: #404758;
+    font-size: 15px; }
+    .loader .content_wrapper img {
+      width: 200px;
+      margin-bottom: 20px; }
+    .loader .content_wrapper [class*="loader-"] {
+      display: block;
+      width: 1em;
+      height: 1em;
+      color: inherit;
+      vertical-align: middle;
+      pointer-events: none;
+      margin: 0px auto 0; }
+    .loader .content_wrapper .loader-05 {
+      border: .20em solid transparent;
+      border-top-color: currentcolor;
+      border-radius: 50%;
+      animation: 1s loader-05 linear infinite;
+      position: relative; }
+      .loader .content_wrapper .loader-05:before {
+        content: '';
+        display: block;
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        top: -.20em;
+        left: -.20em;
+        border: .20em solid currentcolor;
+        border-radius: 50%;
+        opacity: .5; }
+
+@keyframes loader-05 {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.utopia_wrapper {
+  background: linear-gradient(271deg, #f98f48, #dba987, #bdc1a1, #94ceb8, #08d0c1);
+  background-size: 1000% 1000%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: rolling-back 10s linear infinite;
+  -moz-animation: rolling-back 10s linear infinite;
+  animation: rolling-back 10s linear infinite;
+  /* Our mixin positions a copy of our text
+directly on our existing text, while
+also setting content to the appropriate
+text set in the data-text attribute. */
+  /* Creates an animation with 20 steaps. For each step, it calculates 
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/ }
+
+@-webkit-keyframes rolling-back {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@-moz-keyframes rolling-back {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes rolling-back {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+  .utopia_wrapper .glitch {
+    position: relative;
+    color: white;
+    font-size: 2em;
+    letter-spacing: .25em;
+    opacity: 1;
+    /* Animation provies a slight random skew. Check bottom of doc
+  for more information on how to random skew. */
+    animation: glitch-skew 1s infinite linear alternate-reverse; }
+    .utopia_wrapper .glitch::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      left: 2px;
+      text-shadow: -2px 0 #ff00c1;
+      /* Creates an initial clip for our glitch. This works in
+    a typical top,right,bottom,left fashion and creates a mask
+    to only show a certain part of the glitch at a time. */
+      clip: rect(44px, 450px, 56px, 0);
+      /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+    with an alternating animation to keep things fresh. */
+      animation: glitch-anim 5s infinite linear alternate-reverse; }
+    .utopia_wrapper .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      left: -2px;
+      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+      animation: glitch-anim2 1s infinite linear alternate-reverse; }
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(32px, 9999px, 41px, 0);
+    transform: skew(0.49deg); }
+  5% {
+    clip: rect(26px, 9999px, 36px, 0);
+    transform: skew(0.67deg); }
+  10% {
+    clip: rect(8px, 9999px, 22px, 0);
+    transform: skew(0.85deg); }
+  15% {
+    clip: rect(35px, 9999px, 37px, 0);
+    transform: skew(0.3deg); }
+  20% {
+    clip: rect(3px, 9999px, 19px, 0);
+    transform: skew(0.89deg); }
+  25% {
+    clip: rect(20px, 9999px, 2px, 0);
+    transform: skew(0.42deg); }
+  30% {
+    clip: rect(24px, 9999px, 86px, 0);
+    transform: skew(0.46deg); }
+  35% {
+    clip: rect(68px, 9999px, 10px, 0);
+    transform: skew(0.46deg); }
+  40% {
+    clip: rect(22px, 9999px, 95px, 0);
+    transform: skew(0.79deg); }
+  45% {
+    clip: rect(69px, 9999px, 47px, 0);
+    transform: skew(0.45deg); }
+  50% {
+    clip: rect(23px, 9999px, 24px, 0);
+    transform: skew(0.95deg); }
+  55% {
+    clip: rect(24px, 9999px, 89px, 0);
+    transform: skew(0.2deg); }
+  60% {
+    clip: rect(80px, 9999px, 68px, 0);
+    transform: skew(0.31deg); }
+  65% {
+    clip: rect(27px, 9999px, 37px, 0);
+    transform: skew(0.89deg); }
+  70% {
+    clip: rect(8px, 9999px, 15px, 0);
+    transform: skew(0.8deg); }
+  75% {
+    clip: rect(25px, 9999px, 91px, 0);
+    transform: skew(0.45deg); }
+  80% {
+    clip: rect(80px, 9999px, 92px, 0);
+    transform: skew(0.21deg); }
+  85% {
+    clip: rect(9px, 9999px, 92px, 0);
+    transform: skew(0.79deg); }
+  90% {
+    clip: rect(76px, 9999px, 53px, 0);
+    transform: skew(0.16deg); }
+  95% {
+    clip: rect(75px, 9999px, 50px, 0);
+    transform: skew(0.82deg); }
+  100% {
+    clip: rect(54px, 9999px, 48px, 0);
+    transform: skew(0.85deg); } }
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(49px, 9999px, 70px, 0);
+    transform: skew(0.66deg); }
+  5% {
+    clip: rect(99px, 9999px, 86px, 0);
+    transform: skew(0.7deg); }
+  10% {
+    clip: rect(72px, 9999px, 29px, 0);
+    transform: skew(0.76deg); }
+  15% {
+    clip: rect(65px, 9999px, 55px, 0);
+    transform: skew(0.61deg); }
+  20% {
+    clip: rect(47px, 9999px, 75px, 0);
+    transform: skew(0.09deg); }
+  25% {
+    clip: rect(11px, 9999px, 38px, 0);
+    transform: skew(0.15deg); }
+  30% {
+    clip: rect(21px, 9999px, 72px, 0);
+    transform: skew(0.47deg); }
+  35% {
+    clip: rect(79px, 9999px, 62px, 0);
+    transform: skew(0.8deg); }
+  40% {
+    clip: rect(38px, 9999px, 83px, 0);
+    transform: skew(0.15deg); }
+  45% {
+    clip: rect(55px, 9999px, 26px, 0);
+    transform: skew(0.67deg); }
+  50% {
+    clip: rect(20px, 9999px, 24px, 0);
+    transform: skew(0.58deg); }
+  55% {
+    clip: rect(93px, 9999px, 70px, 0);
+    transform: skew(0.83deg); }
+  60% {
+    clip: rect(56px, 9999px, 62px, 0);
+    transform: skew(0.36deg); }
+  65% {
+    clip: rect(57px, 9999px, 82px, 0);
+    transform: skew(0.61deg); }
+  70% {
+    clip: rect(11px, 9999px, 14px, 0);
+    transform: skew(0.33deg); }
+  75% {
+    clip: rect(51px, 9999px, 18px, 0);
+    transform: skew(0.62deg); }
+  80% {
+    clip: rect(97px, 9999px, 24px, 0);
+    transform: skew(0.75deg); }
+  85% {
+    clip: rect(87px, 9999px, 54px, 0);
+    transform: skew(0.82deg); }
+  90% {
+    clip: rect(66px, 9999px, 66px, 0);
+    transform: skew(0.93deg); }
+  95% {
+    clip: rect(64px, 9999px, 38px, 0);
+    transform: skew(0.98deg); }
+  100% {
+    clip: rect(80px, 9999px, 23px, 0);
+    transform: skew(0.82deg); } }
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(-4deg); }
+  10% {
+    transform: skew(5deg); }
+  20% {
+    transform: skew(4deg); }
+  30% {
+    transform: skew(-2deg); }
+  40% {
+    transform: skew(1deg); }
+  50% {
+    transform: skew(-4deg); }
+  60% {
+    transform: skew(-4deg); }
+  70% {
+    transform: skew(-3deg); }
+  80% {
+    transform: skew(3deg); }
+  90% {
+    transform: skew(1deg); }
+  100% {
+    transform: skew(5deg); } }
+</style>

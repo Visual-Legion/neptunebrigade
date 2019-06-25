@@ -64,6 +64,7 @@
 		}
 		img{
 			width: 128px;
+			padding: 20px;
 		}
 	}
 
@@ -86,7 +87,8 @@
 				top: 0%;
 				// opacity: 0;
 				height: 100vh;
-				background-color:rgba(255,255,255,0.95);
+				// background-color:rgba(255,255,255,0.95);
+				background-color:rgba(0,0,0,0.95);
 				transition: left 0.4s ease-in-out;
 				&.tablet_menu_active{
 					left: 0;
@@ -166,7 +168,8 @@ $translateX: 0;
   
   .line {
     display:block;
-    background:$base_color;
+    // background:$base_color;
+    background:$accent_color;
     width:$width-line;
     height:$height-line;
     position:absolute;

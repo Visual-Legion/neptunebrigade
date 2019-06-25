@@ -42,8 +42,11 @@ $body_weight: 400;
 
 $font-family-base: $body_font, Helvetica, Arial, sans-serif;
 
-$font-size-base: 20px;
-$line-height-base: 26px; 
+// $font-size-base: 20px;
+$font-size-base: 18px;
+// $line-height-base: 26px; 
+$line-height-base: 35px; 
+
 
 $font-size-base-mobile: 15px;
 $line-height-base-mobile: 23px; 
@@ -79,10 +82,11 @@ $small : 0.66667em;
 $error: #EF4836;
 
 $white: #ffffff;
-// $black: #000000;
-$black: #222;
+$black: #000000;
+// $black: #222;
+$darkgrey:#555;
 
-$navy: #202533;
+$verylightgrey: #F1F1F1; // not navy anumore => grey
 
 $base_color: $white;
 // $darker_base_color: #2c3344;
@@ -106,7 +110,8 @@ $selection-bg: $accent_color;
 // // $paragraph_margin: 0 0 1.3em 0;
 // $paragraph_margin: 0 0 0.5em 0;
 
-$def_spacing: 42px;
+// $def_spacing: 42px;
+$def_spacing: $line-height-base*2;
 $wrapper-width: 1200px;
 $gutter-width: 30px;
 $column-width: 72px;

@@ -2,15 +2,47 @@
 	// section{
 
 	// }
+	background: $black;
 
 	.haven{
-		padding: 5% 0 12% !important;
-		@include big-phone{
-			padding: 5% 0 5% !important;
+		padding-top: 15% !important;
+		padding-bottom: 10% !important;
+		// padding: 15% 0 10% !important;
+		// @include big-phone{
+		// 	padding: 5% 0 5% !important;
+		// }
+
+		@include tablet{
+			h1,h2,h3{
+				text-align: center !important;
+			}
+			p{
+				text-align: left !important;
+			}
 		}
+
 	}
  
 	
+.learntaht{
+	margin: 0;
+}
 
+.supportus{
+	background-color: $verylightgrey !important;
+	.wp-block-column{
+		display: flex;
+    justify-content: center;
+    align-items: center;
+		.wp-block-image {
+			figure{
+				img {
+					width: 100%;
+					max-width: 300px;
+				}
+			}
+		}
+	}
+}
 	
 }

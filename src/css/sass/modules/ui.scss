@@ -1,15 +1,95 @@
 //F(x) = ( $wrapper-width - (n-1)$gutter-width ) / n
 
+// .wp-block {
+//     max-width: 1200px;
+// }
+
+html,body{
+  scroll-behavior: smooth;
+}
+
+br.clear{
+  display: none;
+}
+
 body, html, .page{
   background: $black;
   color: $base_color;
 }
 
+// to move to an animations.scss
+@keyframes scroll {
+  0%, 20% {
+  transform: translateY(0) scaleY(1);
+  }
+  10% {
+  opacity: 1;
+  }
+  100% {
+  transform: translateY(36px) scaleY(1);
+  opacity: 0.01;
+  }
+}
+
+// html body .fullscreen_header{
+//   @include min-tablet{
+//     width: 100vw;
+//     height: calc(100vh - 100px);
+//     display: flex;
+//     padding:0 !important;
+//   } 
+// }
+
+html body .fullscreen_header.ab-block-container{
+  .ab-container-inside{
+    // @include min-tablet{
+      //In our case, padding is 5%
+      margin-top: -5%;
+      //
+      width: 100%;
+      height: calc(100vh - 80px);
+      display: flex;
+
+      padding:0 !important;
+      .ab-container-content{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        // align-items: center
+        justify-content: center;
+      }
+    // } 
+  }
+}
+
+// .wp-block-columns{
+//   padding-top:$line-height-base*2;
+// }
+
 .blurb_section{
   figure{
     img{
-      height: 100px;
+      height: 80px;
       object-fit: cover;
+    }
+  }
+  .wp-block-image {
+      margin-bottom: 3.2em;
+  }
+  h3{
+     color: #222;
+    margin-bottom: $line-height-base;
+  }
+  p{
+    color: $darkgrey;
+  }
+  .wp-block-column{
+    padding: 0 60px;
+    @include macbook{
+       padding: 0 40px;
+    }
+    @include big-phone{
+       padding: 0 20px;
     }
   }
 }
@@ -21,9 +101,9 @@ article{
     align-self: center;
   }
 }
-article > *{
-  margin: 40px 0;
-}
+// article > *{
+//   margin: 40px 0;
+// }
 
 .wp-block-atomic-blocks-ab-container{
       width: 100%;
@@ -41,8 +121,24 @@ article > *{
   }
 }
 
+// body .ab-block-container, footer{
+//   padding: 5% 0 !important;
+//   @include divi{
+//     padding: 5% 10px !important;
+//   }
+//   @include big-phone{
+//     padding: 5% 5px !important;
+//   }
+// }
+
 body .ab-block-container, footer{
-  padding: 5% 0 !important;
+  padding: $line-height-base*3 0 !important;
+  @include divi{
+    padding:$line-height-base*2 20px !important;
+  }
+  // @include big-phone{
+  //   padding: $line-height-base 5px !important;
+  // }
 }
 
 .wp-block-columns{
@@ -72,12 +168,18 @@ body .ab-block-container, footer{
   }
 }
 
-.background_black{
-  background-color:$black !important;
+.wp-block-atomic-blocks-ab-container{
+  background: transparent !important;
 }
 
-.background_navy{
-  background-color:$navy !important;
+//actually to see black background we"re adding behind
+.wp-block-atomic-blocks-ab-container.background_black{
+  // background-color:$black !important;
+  background-color:transparent !important;
+}
+
+.wp-block-atomic-blocks-ab-container.background_navy{
+  background-color:$verylightgrey !important; 
 }
 
 p,ul{
@@ -201,7 +303,7 @@ body .flex_centered{
 
 // p, ul, ol, pre, table, blockquote {
 //   margin-top: 0px;
-//   margin-bottom: 21px;
+//   margin-bottom: $line-height-base;
 // }
 // ul ul, ol ol, ul ol, ol ul {
 //   margin-top: 0px;

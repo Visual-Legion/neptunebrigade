@@ -1,0 +1,195 @@
+/*  */
+
+body{
+
+	.wp-block-vl-blocks-toggle{
+
+	// padding: 0 20px;
+
+		.vl-accordion-theme-classic, .vl-accordion-theme-neptune{
+			.vl-accordion__content .vl-accordion__content-toggle{
+				i{
+					&:before,&:after{
+						background-color: $accent_color;
+					}
+				}
+				.vl-accordion__content-toggle__content{
+					.vl-accordion__content-toggle__content__text{
+						a{
+							z-index: 111;
+							color: $accent_color;
+						}
+					}
+				}
+			}
+		}
+
+		.vl-accordion{
+
+			&.vl-accordion-theme-classic{
+
+				padding: 0 20px;
+
+				.vl-accordion__content .vl-accordion__content-toggle{
+
+					padding: 20px;
+
+					// i{
+					// 	&:before,&:after{
+					// 		background-color: $accent_color;
+					// 	}
+					// }
+
+					.vl-accordion__content-toggle__title{
+						.vl-accordion__content-toggle__title__text{
+							color: $accent_color;
+							font-size: $small;
+							@include big-phone{
+								font-size: $body;
+							}
+						}
+					}
+
+				  .vl-accordion__content-toggle__content{			
+
+						.vl-accordion__content-toggle__content__text{
+							color: #fff;
+							font-size: $body;
+							// font-weight: 100;
+							@include big-phone{
+								font-size: 15px;
+							}
+						}
+					 }
+				}
+			}
+
+			&.vl-accordion-theme-neptune{
+				.vl-accordion__content{
+					background-color: transparent;
+					.vl-accordion__content-toggle{
+						border:none;
+						position: relative;
+						i{
+							// top: 50%;
+							// bottom: initial;
+							top: 74px;
+							transform: translate(0);
+							transform-origin: 50% 20.5px;
+							will-change: transform;
+							cursor: pointer;
+							right: 50px;
+							&:after, &:before{
+								width: 6px;
+	    					height: 27px;
+							}
+							&:before{
+								transform: translate(8px, 0) rotate(-45deg);
+							}
+							&:after{
+								transform: translate(-8px, 0) rotate(45deg);
+							}
+						}
+
+						input[type=checkbox]:not(:checked) ~ i{
+							&:before{
+								transform: translate(-8px, 0) rotate(-45deg);
+							}
+							&:after{
+								transform: translate(8px, 0) rotate(45deg);
+							}
+						}
+						
+						input{
+							&:hover{
+								~ .vl-accordion__content-toggle__title{
+									img{
+										transform: scale(1.1);
+									}
+									h2{
+										font-size: $h2;
+									}
+								}
+
+								~ i{
+									animation-name: updown_arrow;
+									animation-duration: 1.5s;
+									// animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+									animation-timing-function: ease-in-out;
+									animation-iteration-count: infinite;
+								}
+
+
+							}
+						}
+
+						input[type=checkbox]:checked{
+							~ .vl-accordion__content-toggle__title{
+							h2{
+									font-size: $h2;
+								}
+							}
+						}
+
+						.vl-accordion__content-toggle__title{
+
+							background-color: transparent;
+							h2{
+								margin: 60px 0;
+								@include transition;
+								font-size: $h3;
+							}
+							.vl-accordion__title__image__wrapper{
+								overflow: hidden;
+								img{
+									@include transition;
+								}
+							}
+						}
+						.vl-accordion__content-toggle__content{	
+							// background-color: transparent;	
+							.vl-accordion__content-toggle__content__text{
+								color: #fff;
+								font-size: $body;
+								// font-weight: 100;
+								@include big-phone{
+									font-size: 15px;
+								}
+							}
+						}
+						.vl-accordion__content-toggle__title h2, .vl-accordion__content-toggle__content__text{
+							padding:0 20px;
+							max-width: 1200px;
+							margin-left: auto;
+							margin-right:auto;
+						}
+						.vl-accordion__content-toggle__title h2{
+							padding-right:90px;
+						}
+					}
+				}
+			}
+		}
+	} 
+
+	.tabs_form{
+		ul{
+				 padding: 0;
+			}
+		.wp-block-column{
+			padding: 0 30px;
+		}
+	}
+}
+
+@keyframes updown_arrow {
+  0% {
+  transform: translateY(0) scaleY(1);
+  }
+  50% {
+  transform: translateY(36px) scaleY(1);
+  }
+  100% {
+  transform: translateY(0) scaleY(1);
+  }
+}

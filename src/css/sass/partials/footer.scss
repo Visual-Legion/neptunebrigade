@@ -28,7 +28,7 @@
 
 	// border: solid 1px #dadce0;
 	// background-image: linear-gradient(90deg, $black, #545454);
-	background-color:$navy;
+	background-color:$verylightgrey;
 	display:flex;
 	justify-content: center;
 	// align-items: center;
@@ -60,10 +60,10 @@
 		// }
 		.logo_wraper{
 			align-self: center;
-			// margin-top: 42px;
-			// margin-bottom: 42px;
+			// margin-top: $line-height-base*2;
+			// margin-bottom: $line-height-base*2;
 			@include divi{
-				margin-top: 42px;
+				margin-top: $line-height-base*2;
 			}
 			@include phone{
 				margin-top: 10px;
@@ -74,11 +74,11 @@
 		}
 
 		h4{
-			margin-bottom: 42px;
-	    margin-top: 42px;
+			margin-bottom: $line-height-base*2;
+	    margin-top: $line-height-base*2;
 	    @include divi{
-	    	margin-bottom: 21px;
-	    	margin-top: 21px;
+	    	margin-bottom: $line-height-base;
+	    	margin-top: $line-height-base;
 	    }
 		}
 		
@@ -97,8 +97,8 @@
 			display:flex;
 			justify-content: center;
 			align-items: flex-start;
-			margin-top: 42px;
-			margin-bottom: 42px; 
+			margin-top: $line-height-base*2;
+			// margin-bottom: $line-height-base*2; 
 			flex-direction: column;
 
 			&.back_to_top{
@@ -117,8 +117,8 @@
 			@include divi{
 				// flex-direction: column;
 
-				margin-top: 21px;
-				margin-bottom: 21px; 
+				margin-top: $line-height-base;
+				margin-bottom: $line-height-base; 
 				align-items: center;
 
 				.wys{
@@ -155,10 +155,17 @@
 					height: 18px;
 					border-radius:100%;
 					position: relative;
+					transition: all 0.4s ease-in-out;
 					&:before{
+						transition: all 0.4s ease-in-out;
 						@include absolute_center_both();
 						// font-size: $h3;
 						font-size: 1em;
+					}
+					&:hover{
+						&:before{
+							color: $base_color;
+						}
 					}
 					// &.fa-facebook{
 					// 	background-color:#3B5998;
@@ -311,11 +318,11 @@
 // 	}
 
 // 	h4{
-// 		margin-bottom: 42px;
-//     margin-top: 42px;
+// 		margin-bottom: $line-height-base*2;
+//     margin-top: $line-height-base*2;
 //     @include divi{
-//     	margin-bottom: 21px;
-//     	margin-top: 21px;
+//     	margin-bottom: $line-height-base;
+//     	margin-top: $line-height-base;
 //     }
 // 	}
 // 	a,p{

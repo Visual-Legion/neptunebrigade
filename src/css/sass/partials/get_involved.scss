@@ -1,0 +1,45 @@
+.get-involved{
+	section{
+		.page{
+			background-image: url('http://neptunebrigade.com/wp-content/uploads/2018/11/neptune-brigade-get-involved-logo.svg');
+	background-size: cover; 
+	background-position: center; 
+		}
+	}
+}
+
+.get_involved_section{
+	img{
+		width: 100%;
+	}
+}
+
+// @include tablet{
+// 	.arrow-container{display: none;}
+// }
+
+// @include min-tablet{
+	.arrow-container{
+		display:block;
+		position: absolute;
+		width: 100%;
+		bottom: 50px;
+		// bottom: 0px;
+    figure{
+    	width: 36px;
+    }
+    img {
+		  animation-name: scroll;
+		  animation-duration: 1.5s;
+		  animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+		  animation-iteration-count: infinite;
+		  transform-origin: 50% 20.5px;
+		  will-change: transform;
+		  cursor: pointer;
+		}
+	}
+ 
+	
+
+	
+// }

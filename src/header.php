@@ -16,6 +16,7 @@
 		<!-- <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> -->
 		<link rel="stylesheet" href="https://use.typekit.net/ecq5blu.css">
 
+
 		<?php wp_head(); ?>
 		<script>
         // conditionizr.com

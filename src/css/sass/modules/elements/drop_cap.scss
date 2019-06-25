@@ -1,7 +1,7 @@
 .drop_cap{
 	position: relative;
    z-index: 1;
-   padding-top: 140px;
+   // padding-top: 140px;
 	&:before{
 		content: ' ';
     background-image: url(https://neptunebrigade.com/wp-content/uploads/2018/11/cool-t.svg);
@@ -17,6 +17,7 @@
 
 .t_drop_cap{
 	text-indent:54px;
+	padding-top: 77px;
 	&:before{
 		background-image: url("https://neptunebrigade.com/wp-content/uploads/2018/11/cool-t.svg");
 		width: 107px;
@@ -27,6 +28,7 @@
 
 .w_drop_cap{
 	text-indent:124px;
+	padding-top: 48px;
 	&:before{
 		background-image: url("https://neptunebrigade.com/wp-content/uploads/2018/11/cool-w.svg");
 		width: 247px;
@@ -37,6 +39,7 @@
 
 .d_drop_cap{
    text-indent: 78px;
+   padding-top: 38px;
 	&:before{
 		background-image: url("https://neptunebrigade.com/wp-content/uploads/2018/11/cool-d.svg");
 		width: 154px;

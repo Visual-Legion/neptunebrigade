@@ -136,7 +136,7 @@
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^1.4.0",
     "gulp-print": "^2.0.1",
-    "gulp-sass": "^2.2.0",
+    "gulp-sass": "^4.0.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-template": "^4.0.0",
     "gulp-uglify": "^2.0.0",

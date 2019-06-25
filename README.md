@@ -1,8 +1,18 @@
+# Pre installation
+
+Install Node.js
+Install Git
+Install NPM
+Install Bower
+
 # Installation
 
 prerequisit watchify -> intall with sudo npm install -g watchify
 
 npm install
+npm update
+
+bower install
 
 # Usage
 

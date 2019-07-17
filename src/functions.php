@@ -139,8 +139,8 @@ function html5blank_header_scripts()
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         if (HTML5_DEBUG) {
             // jQuery
-            wp_deregister_script('jquery');
-            wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '1.11.1');
+            // wp_deregister_script('jquery');
+            // wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '1.11.1');
 
             // Conditionizr
             wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0');
@@ -155,21 +155,27 @@ function html5blank_header_scripts()
             wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
 
             // magnific-popup-js
-            wp_register_script('magnific-popup', get_template_directory_uri() . '/bower_components/magnific-popup/dist/jquery.magnific-popup.js', array(), '1.0.1');
+            // wp_register_script('magnific-popup', get_template_directory_uri() . '/bower_components/magnific-popup/dist/jquery.magnific-popup.js', array(), '1.0.1');
+
+            // LazySizes
+            wp_register_script('lazysizes', get_template_directory_uri() . '/js/lib/lazysizes.min.js', array('jquery'));
+
+            // Slick
+            wp_register_script('slick-js', get_template_directory_uri() . '/js/lib/slick.min.js', array('jquery'));
 
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
                 // get_template_directory_uri() . '/js/build/scripts.js',
                 // get_template_directory_uri() . '/js/build/bundle.js',
-                get_template_directory_uri() . '/js/code/bundle.js',
+                get_template_directory_uri() . '/js/build/scripts.js',
                 array(
                     'conditionizr',
                     'polyfill',
                     'system',
                     'modernizr',
-                    'jquery',
-                    'magnific-popup'),
+                    'lazysizes',
+                    'slick-js'),
                 '1.0.6');
 
             // Enqueue Scripts
@@ -207,8 +213,8 @@ function html5blank_styles()
     if (HTML5_DEBUG) {
 
         // magnific-popup-css
-        wp_register_style('magnific-popup', get_template_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '1.0.0');
-        wp_enqueue_style('magnific-popup');
+        // wp_register_style('magnific-popup', get_template_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '1.0.0');
+        // wp_enqueue_style('magnific-popup');
         
         // normalize-css
         wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1');
@@ -419,35 +425,37 @@ function html5blankcomments($comment, $args, $depth)
         $add_below = 'div-comment';
     }
 ?>
-    <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-    <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+<!-- heads up: starting < for the html tag (li or div) in the next line: -->
+<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?>
+    id="comment-<?php comment_ID() ?>">
     <?php if ( 'div' != $args['style'] ) : ?>
     <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-    <?php endif; ?>
-    <div class="comment-author vcard">
-    <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-    </div>
-<?php if ($comment->comment_approved == '0') : ?>
-    <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-    <br />
-<?php endif; ?>
+        <?php endif; ?>
+        <div class="comment-author vcard">
+            <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+            <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+        </div>
+        <?php if ($comment->comment_approved == '0') : ?>
+        <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+        <br />
+        <?php endif; ?>
 
-    <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-        <?php
+        <div class="comment-meta commentmetadata"><a
+                href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+                <?php
             printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
         ?>
-    </div>
+        </div>
 
-    <?php comment_text() ?>
+        <?php comment_text() ?>
 
-    <div class="reply">
-    <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-    </div>
-    <?php if ( 'div' != $args['style'] ) : ?>
+        <div class="reply">
+            <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        </div>
+        <?php if ( 'div' != $args['style'] ) : ?>
     </div>
     <?php endif; ?>
-<?php }
+    <?php }
 
 /*------------------------------------*\
     Actions + Filters + ShortCodes
@@ -598,7 +606,7 @@ function html5_shortcode_demo($atts, $content = null)
 function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
 {
     return '<h2>' . $content . '</h2>';
-}
+} 
 
 
 //MUST REPLACE
@@ -645,9 +653,34 @@ return $vl_option;
  *
  * Should be used in template files like this:
  * <?php echo $vl_option['vl_txt_input']; ?>
- *
- * Note: Should you notice that the variable ($vl_option) is empty when used in certain templates such as header.php, sidebar.php and footer.php
- * you will need to call the function (copy the line below and paste it) at the top of those documents (within php tags)!
- */
-$vl_option = vl_get_global_options();
+    *
+    * Note: Should you notice that the variable ($vl_option) is empty when used in certain templates such as header.php,
+    sidebar.php and footer.php
+    * you will need to call the function (copy the line below and paste it) at the top of those documents (within php
+    tags)!
+    */
+    $vl_option = vl_get_global_options();
 
+
+    /**
+    * Allowed HTML Tags in wysiwygs
+    */
+
+    function wysiwygs_allowed_html() {
+    return array(
+    'a' => array(
+    'href' => array(),
+    'title' => array()
+    ),
+    'br' => array(),
+    'em' => array(),
+    'strong' => array(),
+    'h1' => array(),
+    'h2' => array(),
+    'h3' => array(),
+    'h4' => array(),
+    'h5' => array(),
+    'h6' => array(),
+    'p' => array()
+    );
+    }

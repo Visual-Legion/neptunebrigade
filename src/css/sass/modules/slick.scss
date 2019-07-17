@@ -1,0 +1,43 @@
+.slick-dots li button:before {
+  // font-size:32px;
+  font-size: 12px;
+  @include transition();
+}
+
+.slick-arrow {
+  height: 100%;
+}
+
+.slick-prev:before {
+  content: "‹";
+}
+// .slick-prev {
+//   left: -50px;
+// }
+// .slick-next {
+//   right: -50px;
+// }
+.slick-next:before {
+  content: "›";
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+  font-size: 56px;
+}
+/*.slick-slider{
+      background-color:#f5f5f5;
+  }*/
+.testimonial_slider button,
+.testimonial_slider button:hover {
+  padding: 0;
+}
+
+.slick-track {
+  display: flex;
+}
+
+// .slick-list {
+//   overflow: hidden;
+// }

@@ -1,0 +1,152 @@
+// Slick bug with display flex, so doing theights manually
+
+//$h1 51px
+//$h1 -> resp 36px
+
+$container_top_padding: $s_spacing;
+$container_bottom_padding: $container_top_padding;
+$back_margin_bottom: $l_spacing;
+$title_margin_bottom: 5px;
+$image_margin_bottom: $container_bottom_padding;
+$footer_height: $a_button_font_size + 18px;
+$slide_image_padding_y: $s_spacing/2;
+
+$divi-container_top_padding: $s_spacing;
+$divi-container_bottom_padding: $divi-container_top_padding;
+$divi-back_margin_bottom: $s_spacing;
+$big-phone-footer_height: 12px + 18px;
+
+$elems_height: $container_top_padding + $container_bottom_padding +
+  $back_margin_bottom + $title_margin_bottom + $image_margin_bottom + 51px +
+  $a_button_font_size + $footer_height + $slide_image_padding_y * 2;
+
+$divi-elems_height: $divi-container_top_padding + $divi-container_bottom_padding +
+  $divi-back_margin_bottom + $title_margin_bottom + $image_margin_bottom + 51px +
+  $a_button_font_size + $footer_height + $slide_image_padding_y * 2; //6px is margin top for back button
+
+$big-phone-elems_height: $divi-container_top_padding +
+  $divi-container_bottom_padding + $divi-back_margin_bottom +
+  $title_margin_bottom + $image_margin_bottom + 36px + 12px +
+  $big-phone-footer_height + $slide_image_padding_y * 2 - 6px;
+
+$phone-elems_height: $divi-container_top_padding +
+  $divi-container_bottom_padding + $divi-back_margin_bottom +
+  $title_margin_bottom + $image_margin_bottom + 36px + 12px +
+  $big-phone-footer_height * 2 + $slide_image_padding_y * 2 - 6px;
+
+.gallery {
+  //   header {
+  //     pointer-events: none;
+  //   }
+  .header-wrapper {
+    border-bottom: 0;
+    #hamburger-icon {
+      margin: 0;
+    }
+  }
+}
+
+.vl-gallery {
+  overflow: hidden;
+  padding: $container_top_padding $l_spacing $container_bottom_padding;
+
+  @include divi {
+    padding: $divi-container_top_padding $xs_spacing
+      $divi-container_bottom_padding;
+  }
+
+  // position: relative;
+  a.buton--back {
+    // margin-bottom: $xl_spacing + $l_spacing;
+    margin-bottom: $back_margin_bottom;
+    @include divi {
+      margin-top: -6px;
+      margin-bottom: $divi-back_margin_bottom;
+    }
+  }
+  a.button--tab {
+    transition-duration: 0.7s;
+  }
+  h1 {
+    // margin-bottom: $xl_spacing;
+    // margin-bottom: $s_spacing/2;
+    margin-bottom: $title_margin_bottom;
+  }
+
+  .tot-num-slides {
+    color: #637580;
+  }
+
+  .slick-track {
+    transition: all 0.7s ease-in-out;
+  }
+
+  &__sliders {
+    position: relative;
+    // height: 100%;
+    // display: flex;
+
+    &__xtra-info {
+      position: absolute;
+      right: 0;
+      // top: 0;
+      //   transform: translateY(-$xl_spacing -$s_spacing);
+      transform: translateY(-56px);
+      display: none;
+
+      @include divi {
+        transform: translateY(-34px);
+      }
+
+      h4 {
+        display: flex;
+        align-items: center;
+      }
+
+      &.active {
+        display: block;
+        animation: fade-in 0.7s ease-in-out;
+      }
+    }
+    &__slider {
+      display: none;
+
+      &.active {
+        display: block;
+        // animation: name duration timing-function delay iteration-count direction fill-mode;
+        // animation: fade-in 1.4s ease-in-out;
+        animation: fade-in 0.7s ease-in-out;
+      }
+
+      // height: 70vh;
+      height: calc(100vh - #{$elems_height});
+
+      @include divi {
+        height: calc(100vh - #{$divi-elems_height});
+      }
+
+      @include big-phone {
+        height: calc(100vh - #{$big-phone-elems_height});
+      }
+
+      @include phone {
+        height: calc(100vh - #{$phone-elems_height});
+      }
+
+      &__slide {
+        img,
+        video {
+          // height: 100%;
+          height: calc(100vh - #{$elems_height});
+          padding: $slide_image_padding_y $s_spacing/4;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+.gallery .tab-section__content.vl-gallery__sliders__slider {
+  // margin-bottom: 0;
+  margin-bottom: $back_margin_bottom/2;
+}

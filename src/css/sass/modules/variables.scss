@@ -3,7 +3,6 @@
  * ---
  */
 
-
 /**
  * Typography
  */
@@ -27,15 +26,10 @@
 // $body : 16px;
 // $small : 12px;
 
-
-
-
-
-
 // 1.5 - Perfect fith
 
-$heading_font : "futura-pt", serif; 
-$body_font : "proxima-nova", sans-serif; 
+$heading_font: "futura-pt", serif;
+$body_font: "proxima-nova", sans-serif;
 
 $heading_weight: 700;
 $body_weight: 400;
@@ -44,54 +38,52 @@ $font-family-base: $body_font, Helvetica, Arial, sans-serif;
 
 // $font-size-base: 20px;
 $font-size-base: 18px;
-// $line-height-base: 26px; 
-$line-height-base: 35px; 
-
+// $line-height-base: 26px;
+$line-height-base: 35px;
 
 $font-size-base-mobile: 15px;
-$line-height-base-mobile: 23px; 
+$line-height-base-mobile: 23px;
 
 // $font-size-base: 18px;
-// $line-height-base: 23px; 
+// $line-height-base: 23px;
 
 // $font-size-base-mobile: 16px;
-// $line-height-base-mobile: 21px; 
+// $line-height-base-mobile: 21px;
 
-$h1 : 5.063em;
-$h2 : 3.375em	;
-$h3 : 2.25em;
-$h4 : 1.5em;
-$h5 : 1.5em;
+$h1: 5.063em;
+$h2: 3.375em;
+$h3: 2.25em;
+$h4: 1.5em;
+$h5: 1.5em;
 
 // @media screen and (max-width:600px){
-	$h1 : 3.998em;
-	$h2 : 2.827em;
-	$h3 : 1.999em;
-	$h4 : 1.414em;
-	$h5 : 1.414em;
-// } 
+$h1: 3.998em;
+$h2: 2.827em;
+$h3: 1.999em;
+$h4: 1.414em;
+$h5: 1.414em;
+// }
 
-$body : 1em;
-$small : 0.66667em;
-
+$body: 1em;
+$small: 0.66667em;
 
 /**
  * Colors
  */
 
-$error: #EF4836;
+$error: #ef4836;
 
 $white: #ffffff;
 $black: #000000;
 // $black: #222;
-$darkgrey:#555;
+$darkgrey: #555;
 
-$verylightgrey: #F1F1F1; // not navy anumore => grey
+$verylightgrey: #f1f1f1; // not navy anumore => grey
 
 $base_color: $white;
 // $darker_base_color: #2c3344;
 
-$accent_color: #267DFF;
+$accent_color: #267dff;
 // $darker_accent_color: #3fbad6;
 
 // $text-color: $base_color;
@@ -101,7 +93,6 @@ $text-color: $black;
 $body-bg: #fff;
 $selection-bg: $accent_color;
 
-
 /**
  * Grid
  */
@@ -109,14 +100,22 @@ $selection-bg: $accent_color;
 // $heading_margin: 0.5em 0 0.5em;;
 // // $paragraph_margin: 0 0 1.3em 0;
 // $paragraph_margin: 0 0 0.5em 0;
+$a_button_font_size: 14px;
+
+$xs-spacing: 15px;
+$s-spacing: 28px;
+// $l-spacing: 83px;
+$l-spacing: 45px;
+$resp-l-spacing: 35px;
+// $xl-spacing: 120px;
+$xl-spacing: 60px;
 
 // $def_spacing: 42px;
-$def_spacing: $line-height-base*2;
+$def_spacing: $line-height-base * 2;
 $wrapper-width: 1200px;
 $gutter-width: 30px;
 $column-width: 72px;
 // $wrapper-width: 1080px;
-
 
 $padding-horizontal-base: 5px;
 $padding-vertical-base: 5px;

@@ -1,0 +1,75 @@
+.tab-section {
+  padding: $l_spacing;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include divi {
+    padding: $s_spacing $xs_spacing $s_spacing;
+  }
+
+  a.buton--back {
+    // margin-bottom: $xl_spacing + $l_spacing;
+    margin-bottom: $l_spacing;
+    align-self: flex-start;
+  }
+
+  &__content {
+    display: none;
+    &.active {
+      // margin-bottom: $xl_spacing + $s_spacing;
+      display: block;
+      animation: fade-in 0.7s ease-in-out;
+    }
+  }
+  &__nav {
+    // margin-top: $s_spacing/2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    // margin-bottom: $xl_spacing;
+    // margin-top: $xl_spacing;
+
+    a {
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      &:not(first-of-type) {
+        margin-left: 20px;
+      }
+
+      &:hover,
+      &.active {
+        opacity: 1;
+        color: $white;
+        border-color: $accent_color;
+        background-color: $accent_color;
+      }
+
+      @include divi {
+        // width: 50%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      @include phone {
+        margin-left: $l_spacing;
+        margin-right: $l_spacing;
+      }
+
+      @include small-phone {
+        margin-left: $l_spacing/2;
+        margin-right: $l_spacing/2;
+      }
+
+      //   letter-spacing: 0.5px;
+      //   margin-left: $l_spacing/2;
+      //   margin-right: $l_spacing/2;
+      //   &:hover {
+      //     text-shadow: 1px 0 $fv-black;
+      //   }
+    }
+  }
+}
